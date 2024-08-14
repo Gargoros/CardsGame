@@ -14,6 +14,8 @@
 		8C4C3A002C6CFE29001C6D14 /* MultiroundPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C39FD2C6CFE29001C6D14 /* MultiroundPro.otf */; };
 		8C4C3A012C6CFE29001C6D14 /* InterVariable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C39FE2C6CFE29001C6D14 /* InterVariable.ttf */; };
 		8C4C3A022C6CFE29001C6D14 /* Muller-Trial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C39FF2C6CFE29001C6D14 /* Muller-Trial-Regular.ttf */; };
+		8C4C3A062C6D01C3001C6D14 /* CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C3A052C6D01C3001C6D14 /* CustomFonts.swift */; };
+		8C4C3A092C6D01F3001C6D14 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C3A082C6D01F3001C6D14 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		8C4C39FE2C6CFE29001C6D14 /* InterVariable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = InterVariable.ttf; sourceTree = "<group>"; };
 		8C4C39FF2C6CFE29001C6D14 /* Muller-Trial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Muller-Trial-Regular.ttf"; sourceTree = "<group>"; };
 		8C4C3A032C6CFFBA001C6D14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8C4C3A052C6D01C3001C6D14 /* CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFonts.swift; sourceTree = "<group>"; };
+		8C4C3A082C6D01F3001C6D14 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +62,11 @@
 		8C4C39E52C6CFB4F001C6D14 /* CardsGame */ = {
 			isa = PBXGroup;
 			children = (
+				8C4C39F42C6CFBD9001C6D14 /* App */,
+				8C4C39F52C6CFBDD001C6D14 /* Code */,
 				8C4C3A032C6CFFBA001C6D14 /* Info.plist */,
 				8C4C39F72C6CFBF9001C6D14 /* Resources */,
 				8C4C39F62C6CFBE3001C6D14 /* Utilities */,
-				8C4C39F52C6CFBDD001C6D14 /* Code */,
-				8C4C39F42C6CFBD9001C6D14 /* App */,
 			);
 			path = CardsGame;
 			sourceTree = "<group>";
@@ -86,10 +90,10 @@
 		8C4C39F52C6CFBDD001C6D14 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				8C4C39FA2C6CFCBF001C6D14 /* Model */,
-				8C4C39F92C6CFCB5001C6D14 /* ViewModel */,
-				8C4C39F82C6CFCB0001C6D14 /* View */,
 				8C4C39E82C6CFB4F001C6D14 /* MainView.swift */,
+				8C4C39FA2C6CFCBF001C6D14 /* Model */,
+				8C4C39F82C6CFCB0001C6D14 /* View */,
+				8C4C39F92C6CFCB5001C6D14 /* ViewModel */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -97,6 +101,8 @@
 		8C4C39F62C6CFBE3001C6D14 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8C4C3A072C6D01E7001C6D14 /* Constants */,
+				8C4C3A042C6D01AC001C6D14 /* Enums */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -104,10 +110,10 @@
 		8C4C39F72C6CFBF9001C6D14 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8C4C39FC2C6CFCF5001C6D14 /* Sounds */,
-				8C4C39FB2C6CFCD8001C6D14 /* Fonts */,
 				8C4C39EA2C6CFB51001C6D14 /* Assets.xcassets */,
+				8C4C39FB2C6CFCD8001C6D14 /* Fonts */,
 				8C4C39EC2C6CFB51001C6D14 /* Preview Content */,
+				8C4C39FC2C6CFCF5001C6D14 /* Sounds */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -148,6 +154,22 @@
 			children = (
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		8C4C3A042C6D01AC001C6D14 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				8C4C3A052C6D01C3001C6D14 /* CustomFonts.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		8C4C3A072C6D01E7001C6D14 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				8C4C3A082C6D01F3001C6D14 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,8 +245,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C4C3A062C6D01C3001C6D14 /* CustomFonts.swift in Sources */,
 				8C4C39E92C6CFB4F001C6D14 /* MainView.swift in Sources */,
 				8C4C39E72C6CFB4F001C6D14 /* CardsGameApp.swift in Sources */,
+				8C4C3A092C6D01F3001C6D14 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

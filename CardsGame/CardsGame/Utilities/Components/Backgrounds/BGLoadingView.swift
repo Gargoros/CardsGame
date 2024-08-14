@@ -23,6 +23,8 @@ struct BGLoadingView: View {
                 
                 Text(StringConstants.loadingString)
                     .modifier(LoadingTextModifier())
+                    .padding(.top, 200)
+                
                 
             }
         }

@@ -12,6 +12,8 @@ struct CardsGameApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
+                .statusBar(hidden: true)
         }
+        
     }
 }

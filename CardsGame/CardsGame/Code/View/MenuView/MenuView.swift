@@ -10,6 +10,7 @@ import SwiftUI
 struct MenuView: View {
     //MARK: - Properties
     @ObservedObject var router = Router.shared
+    @ObservedObject var game = GameViewModel()
     
     //MARK: - Views
     var body: some View {
@@ -56,7 +57,7 @@ struct MenuView: View {
                             case .menu:
                                 MenuView()
                             case .game:
-                                GameView()
+                                GameView(viewModel: game)
                             case .notification:
                                 NotificationView()
                             case .setting:

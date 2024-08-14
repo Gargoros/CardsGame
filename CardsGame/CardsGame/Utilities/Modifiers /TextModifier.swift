@@ -83,7 +83,7 @@ struct GameMoviesAndTimeTextModifier: ViewModifier{
     func body(content: Content) -> some View {
         content
             .foregroundStyle(Color.white)
-            .font(Font.custom(CustomFonts.multiroundPro.rawValue, size: 14).weight(.regular))
+            .font(Font.custom(CustomFonts.multiroundPro.rawValue, size: 21).weight(.regular))
             .multilineTextAlignment(.center)
             .minimumScaleFactor(0.01)
     }

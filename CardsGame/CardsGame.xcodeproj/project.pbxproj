@@ -25,6 +25,8 @@
 		8C4C3A1B2C6D0AB8001C6D14 /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C3A1A2C6D0AB8001C6D14 /* MenuButtonView.swift */; };
 		8C4C3A1E2C6D0B79001C6D14 /* TextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C3A1D2C6D0B79001C6D14 /* TextModifier.swift */; };
 		8C4C3A202C6D0CA7001C6D14 /* IconButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C3A1F2C6D0CA7001C6D14 /* IconButtonView.swift */; };
+		8C4C3A242C6D1090001C6D14 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4C3A232C6D1090001C6D14 /* Launch Screen.storyboard */; };
+		8C4F7E702C6D1F2800417D9B /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4F7E6F2C6D1F2800417D9B /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		8C4C3A1A2C6D0AB8001C6D14 /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
 		8C4C3A1D2C6D0B79001C6D14 /* TextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifier.swift; sourceTree = "<group>"; };
 		8C4C3A1F2C6D0CA7001C6D14 /* IconButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonView.swift; sourceTree = "<group>"; };
+		8C4C3A232C6D1090001C6D14 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		8C4F7E6F2C6D1F2800417D9B /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,8 @@
 		8C4C39F82C6CFCB0001C6D14 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8C4F7E6E2C6D1F1200417D9B /* MenuView */,
+				8C4C3A222C6D106E001C6D14 /* LaunchView */,
 				8C4C3A0A2C6D0385001C6D14 /* MainView */,
 			);
 			path = View;
@@ -239,6 +245,22 @@
 			path = "Modifiers ";
 			sourceTree = "<group>";
 		};
+		8C4C3A222C6D106E001C6D14 /* LaunchView */ = {
+			isa = PBXGroup;
+			children = (
+				8C4C3A232C6D1090001C6D14 /* Launch Screen.storyboard */,
+			);
+			path = LaunchView;
+			sourceTree = "<group>";
+		};
+		8C4F7E6E2C6D1F1200417D9B /* MenuView */ = {
+			isa = PBXGroup;
+			children = (
+				8C4F7E6F2C6D1F2800417D9B /* MenuView.swift */,
+			);
+			path = MenuView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -297,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C4C3A242C6D1090001C6D14 /* Launch Screen.storyboard in Resources */,
 				8C4C39EE2C6CFB51001C6D14 /* Preview Assets.xcassets in Resources */,
 				8C4C3A012C6CFE29001C6D14 /* InterVariable.ttf in Resources */,
 				8C4C3A002C6CFE29001C6D14 /* MultiroundPro.otf in Resources */,
@@ -319,6 +342,7 @@
 				8C4C3A0E2C6D047D001C6D14 /* BGMainView.swift in Sources */,
 				8C4C3A1E2C6D0B79001C6D14 /* TextModifier.swift in Sources */,
 				8C4C3A162C6D04DF001C6D14 /* BGWinView.swift in Sources */,
+				8C4F7E702C6D1F2800417D9B /* MenuView.swift in Sources */,
 				8C4C39E92C6CFB4F001C6D14 /* MainView.swift in Sources */,
 				8C4C3A202C6D0CA7001C6D14 /* IconButtonView.swift in Sources */,
 				8C4C39E72C6CFB4F001C6D14 /* CardsGameApp.swift in Sources */,
@@ -455,6 +479,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CardsGame/Resources/Preview Content\"";
@@ -467,6 +492,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -491,6 +520,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CardsGame/Resources/Preview Content\"";
@@ -503,6 +533,10 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (

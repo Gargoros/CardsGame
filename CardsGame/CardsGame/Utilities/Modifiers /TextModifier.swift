@@ -23,7 +23,7 @@ struct NotificationTextModifier: ViewModifier{
             .font(Font.custom(CustomFonts.inter.rawValue, size: 26).weight(.bold))
             .multilineTextAlignment(.center)
             .lineLimit(2)
-            .minimumScaleFactor(0.01)
+            .minimumScaleFactor(0.1)
     }
 }
 
@@ -35,7 +35,8 @@ struct StayTunedTextModifier: ViewModifier{
             .font(Font.custom(CustomFonts.inter.rawValue, size: 18).weight(.medium))
             .multilineTextAlignment(.center)
             .lineLimit(2)
-            .minimumScaleFactor(0.1)
+            .minimumScaleFactor(0.01)
+            .multilineTextAlignment(.center)
             .padding(.horizontal)
     }
 }
@@ -48,7 +49,8 @@ struct IWantBonusesTextModifier: ViewModifier{
             .font(Font.custom(CustomFonts.inter.rawValue, size: 18).weight(.medium))
             .multilineTextAlignment(.center)
             .lineLimit(1)
-            .minimumScaleFactor(0.1)
+            .minimumScaleFactor(0.01)
+            .multilineTextAlignment(.center)
             .padding()
     }
 }
@@ -59,6 +61,8 @@ struct SkipTextModifier: ViewModifier{
         content
             .foregroundStyle(Color.appGray)
             .font(Font.custom(CustomFonts.inter.rawValue, size: 18).weight(.medium))
+            .multilineTextAlignment(.center)
+            .minimumScaleFactor(0.01)
     }
 }
 
@@ -67,8 +71,10 @@ struct GameTextModifier: ViewModifier{
     func body(content: Content) -> some View {
         content
             .foregroundStyle(Color.white)
-            .font(Font.custom(CustomFonts.multiroundPro.rawValue, size: 18).weight(.regular))
-            .padding()
+            .minimumScaleFactor(0.01)
+            .font(Font.custom(CustomFonts.multiroundPro.rawValue, size: 16).weight(.regular))
+            .multilineTextAlignment(.center)
+            .padding(3)
     }
 }
 
@@ -77,6 +83,8 @@ struct GameMoviesAndTimeTextModifier: ViewModifier{
     func body(content: Content) -> some View {
         content
             .foregroundStyle(Color.white)
-            .font(Font.custom(CustomFonts.multiroundPro.rawValue, size: 18).weight(.regular))
+            .font(Font.custom(CustomFonts.multiroundPro.rawValue, size: 14).weight(.regular))
+            .multilineTextAlignment(.center)
+            .minimumScaleFactor(0.01)
     }
 }

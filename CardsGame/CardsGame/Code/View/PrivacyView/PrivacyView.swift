@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct PrivacyView: View {
+    //MARK: - Properties
+    @Binding var linkPage: URL?
+    
+    //MARK: - Views
     var body: some View {
-        Text("Privacy View")
+        SafariView(url: linkPage ?? URL(string: StringConstants.url2)!)
+            .ignoresSafeArea()
+            .navigationBarBackButtonHidden(true)
+        
     }
 }
 
 #Preview {
-    PrivacyView()
+    PrivacyView(linkPage: .constant(URL(string: StringConstants.url1)))
 }

@@ -82,4 +82,8 @@ struct StringConstants {
     //MARK: - Game
     static let moviesString         = "MOVIES: "
     static let timeString           = "Time: "
+    
+    //MARK: - URL
+    static let url1                 = "https://developer.apple.com"
+    static let url2                 = "https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller"
 }

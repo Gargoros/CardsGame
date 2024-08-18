@@ -71,10 +71,11 @@ struct GameTextModifier: ViewModifier{
     func body(content: Content) -> some View {
         content
             .foregroundStyle(Color.white)
+            .font(Font.custom(CustomFonts.multiroundPro.rawValue, size: 21).weight(.regular))
             .minimumScaleFactor(0.01)
-            .font(Font.custom(CustomFonts.multiroundPro.rawValue, size: 16).weight(.regular))
             .multilineTextAlignment(.center)
-            .padding(3)
+            .lineLimit(1)
+            .padding(.horizontal, 35)
     }
 }
 

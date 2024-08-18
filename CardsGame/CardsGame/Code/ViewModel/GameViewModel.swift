@@ -18,6 +18,7 @@ class GameViewModel: ObservableObject {
         return model.movies
     }
     @Published var elapsedTime: TimeInterval = 0
+    @Published var isStopWatchTimerRun = false
     @Published private var model = createMatchingGame()
     
     private static let slotsList = [
@@ -52,22 +53,27 @@ class GameViewModel: ObservableObject {
         }
     }
     
-    func startStop() {
+    func startStopwatch(){
+        stopwatchTimer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [weak self] timer in
+            self?.elapsedTime += timer.timeInterval
+        })
+        
+        isStopWatchTimerRun = true
+    }
+    func pauseWatch(){
+        if let timer = stopwatchTimer {
+            timer.invalidate()
+            isStopWatchTimerRun = false
+            
+        }
+    }
+    func resetStopwatchTimer() {
         if let timer = stopwatchTimer {
             timer.invalidate()
             stopwatchTimer = nil
             elapsedTime = 0
-        } else {
-            stopwatchTimer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { [weak self] timer in
-                self?.elapsedTime += timer.timeInterval
-            })
-        }
-    }
-    
-    func pauseWatch(){
-        if let timer = stopwatchTimer {
-            timer.invalidate()
             
+            isStopWatchTimerRun = true
         }
     }
     
@@ -87,6 +93,13 @@ class GameViewModel: ObservableObject {
     
     func resetGame(){
         model = GameViewModel.createMatchingGame()
+    }
+    
+    func recreateGame(){
+        resetGame()
+        resetStopwatchTimer()
+        shuffle()
+        startStopwatch()
     }
     
     func winCheck() -> Bool{

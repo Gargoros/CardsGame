@@ -58,8 +58,6 @@ struct GameView: View {
                         y: geometry.size.height * 0.02
                     )
                     
-                    
-                    //MARK: - LazyVGrid()
                     LazyVGrid(columns: columns, spacing: 0){
                         ForEach(viewModel.slots) {slot in
                             SlotView(
@@ -68,21 +66,21 @@ struct GameView: View {
                             .animation(.default, value: viewModel.slots)
                             .padding(.vertical, 5)
                             .onTapGesture {
-                                withAnimation(.easeInOut(duration: 0.3)) {
-                                    viewModel.chooseSlot(slot)
+                                if viewModel.isStopWatchTimerRun {
+                                    withAnimation(.easeInOut(duration: 0.3)) {
+                                        viewModel.chooseSlot(slot)
+                                    }
                                 }
-                                
                             }
                             .rotation3DEffect(
                                 .degrees(slot.isFaceUp || slot.isMatching ? 0 : 180),
                                 axis: (x: 0.0, y: 1.0, z: 0.0)
                             )
                         }
-                        
                         .onAppear{
                             withAnimation(.easeInOut(duration: 0.5)){
                                 viewModel.shuffle()
-                                viewModel.startStop()
+                                viewModel.startStopwatch()
                                 
                             }
                         }
@@ -91,30 +89,40 @@ struct GameView: View {
                     .padding(.horizontal, 10)
                     
                     //MARK: - bottoms button
-                    HStack(spacing: 20){
+                    HStack(spacing: 15){
                         IconButtonView(
-                            buttonImage: ImagesConstants.playButton,
-                            action: {})
+                            buttonImage: viewModel.isStopWatchTimerRun ?
+                            ImagesConstants.pauseButton : ImagesConstants.playButton,
+                            action: {
+                                viewModel.isStopWatchTimerRun ?
+                                viewModel.pauseWatch() : viewModel.startStopwatch()
+                            })
                         .frame(width: geometry.size.width * 0.3,
                                height: geometry.size.width * 0.3)
                         
                         Spacer()
                         IconButtonView(
                             buttonImage: ImagesConstants.leftButton,
-                            action: {})
+                            action: {
+                                Router.shared.backToRoot()
+                            })
                         .frame(width: geometry.size.width * 0.3,
                                height: geometry.size.width * 0.3)
                         Spacer()
                         IconButtonView(
                             buttonImage: ImagesConstants.undoRightButton,
-                            action: {})
+                            action: {
+                                withAnimation(.easeInOut(duration: 0.5)){
+                                    viewModel.recreateGame()
+                                }
+                            })
                         .frame(width: geometry.size.width * 0.3,
                                height: geometry.size.width * 0.3)
                     }
                     
                     .position(
                         x: geometry.size.width / 2,
-                        y: geometry.size.height * 0.08
+                        y: geometry.size.height * 0.07
                     )
                     
                 }
@@ -122,6 +130,30 @@ struct GameView: View {
             .padding(20)
             
             
+        }
+        .onDisappear{
+            viewModel.resetStopwatchTimer()
+            viewModel.resetGame()
+        }
+        .overlay {
+            if viewModel.winCheck() {
+                WinView(
+                    movies: viewModel.movies,
+                    time: viewModel.formattedElapsedTime(),
+                    reset: {
+                        withAnimation(.easeInOut(duration: 0.5)){
+                            viewModel.recreateGame()
+                        }},
+                    menu: {
+                        Router.shared.backToRoot()
+                    }
+                )
+                .ignoresSafeArea()
+                .onAppear{
+                    viewModel.pauseWatch()
+                }
+                
+            }
         }
         .navigationBarBackButtonHidden(true)
     }

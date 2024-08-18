@@ -38,6 +38,7 @@
 		8C793DA02C6D71F900C2A4D1 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C793D9F2C6D71F900C2A4D1 /* GameViewModel.swift */; };
 		8C793DA22C6D72C900C2A4D1 /* SlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C793DA12C6D72C900C2A4D1 /* SlotView.swift */; };
 		8C793DA52C6D739F00C2A4D1 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C793DA42C6D739F00C2A4D1 /* Array+Extension.swift */; };
+		8C793DA72C722D2C00C2A4D1 /* WinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C793DA62C722D2C00C2A4D1 /* WinView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		8C793D9F2C6D71F900C2A4D1 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		8C793DA12C6D72C900C2A4D1 /* SlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotView.swift; sourceTree = "<group>"; };
 		8C793DA42C6D739F00C2A4D1 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		8C793DA62C722D2C00C2A4D1 /* WinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +340,7 @@
 			children = (
 				8C793D982C6D6E5A00C2A4D1 /* GameInfoView.swift */,
 				8C793DA12C6D72C900C2A4D1 /* SlotView.swift */,
+				8C793DA62C722D2C00C2A4D1 /* WinView.swift */,
 			);
 			path = GameViewComponents;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C4C3A1B2C6D0AB8001C6D14 /* MenuButtonView.swift in Sources */,
+				8C793DA72C722D2C00C2A4D1 /* WinView.swift in Sources */,
 				8C4C3A182C6D0532001C6D14 /* BackgroundView.swift in Sources */,
 				8C793D882C6D502800C2A4D1 /* RouterEnum.swift in Sources */,
 				8C4C3A062C6D01C3001C6D14 /* CustomFonts.swift in Sources */,

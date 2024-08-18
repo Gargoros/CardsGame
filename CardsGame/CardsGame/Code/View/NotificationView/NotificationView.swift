@@ -13,7 +13,46 @@ struct NotificationView: View {
     
     //MARK: - Views
     var body: some View {
-        Text("NotificationView")
+        ZStack{
+            BGNotificationView()
+            
+            VStack(spacing: 10){
+                Spacer()
+                
+                Text(StringConstants.notificationsString.uppercased())
+                    .modifier(NotificationTextModifier())
+                
+                Text(StringConstants.stayTunedString)
+                    .modifier(StayTunedTextModifier())
+                
+                Button {
+                    //TODO: - Add functionality
+                } label: {
+                    HStack {
+                        Spacer()
+                        Text(StringConstants.iWantBonusesString)
+                            .modifier(IWantBonusesTextModifier())
+                        Spacer()
+                        
+                    }
+                    .background(Color.appYellow)
+                    .cornerRadius(8, corners: .allCorners)
+                    .padding(.vertical, 20)
+                }
+                
+                Button{
+                    Router.shared.backToRoot()
+                } label: {
+                    Text(StringConstants.skipString)
+                        .modifier(SkipTextModifier())
+                }
+                
+
+                    
+            }
+            .padding()
+        }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

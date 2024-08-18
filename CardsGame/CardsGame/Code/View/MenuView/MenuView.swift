@@ -11,6 +11,7 @@ struct MenuView: View {
     //MARK: - Properties
     @ObservedObject var router = Router.shared
     @ObservedObject var game = GameViewModel()
+    @State private var url = URL(string: StringConstants.url1)
     
     //MARK: - Views
     var body: some View {
@@ -32,20 +33,21 @@ struct MenuView: View {
                             )
                         VStack (spacing: 5){
                             NavigationLink(
-                                value: RouterEnum.notification) {
+                                value: RouterEnum.privacy) {
                                     MenuButtonView(
-                                        imageName: ImagesConstants.button3,
-                                        buttonText: StringConstants.notificationString)
+                                        imageName: ImagesConstants.button2,
+                                        buttonText: StringConstants.privacyPolicyString)
                                 }
                                 .frame(
                                     width: geometry.size.width * 0.45,
                                     height: geometry.size.height * 0.08
                                 )
+                            
                             NavigationLink(
-                                value: RouterEnum.privacy) {
+                                value: RouterEnum.notification) {
                                     MenuButtonView(
                                         imageName: ImagesConstants.button2,
-                                        buttonText: StringConstants.privacyPolicyString)
+                                        buttonText: StringConstants.notificationString)
                                 }
                                 .frame(
                                     width: geometry.size.width * 0.45,
@@ -63,7 +65,7 @@ struct MenuView: View {
                             case .setting:
                                 SettingView()
                             case .privacy:
-                                PrivacyView()
+                                PrivacyView(linkPage: $url)
                             }
                         }
                         .navigationBarBackButtonHidden(true)

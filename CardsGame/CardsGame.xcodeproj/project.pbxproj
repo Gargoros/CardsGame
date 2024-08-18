@@ -39,6 +39,7 @@
 		8C793DA22C6D72C900C2A4D1 /* SlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C793DA12C6D72C900C2A4D1 /* SlotView.swift */; };
 		8C793DA52C6D739F00C2A4D1 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C793DA42C6D739F00C2A4D1 /* Array+Extension.swift */; };
 		8C793DA72C722D2C00C2A4D1 /* WinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C793DA62C722D2C00C2A4D1 /* WinView.swift */; };
+		8C793DAD2C72628D00C2A4D1 /* SafariWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C793DAC2C72628D00C2A4D1 /* SafariWebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		8C793DA12C6D72C900C2A4D1 /* SlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotView.swift; sourceTree = "<group>"; };
 		8C793DA42C6D739F00C2A4D1 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		8C793DA62C722D2C00C2A4D1 /* WinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinView.swift; sourceTree = "<group>"; };
+		8C793DAC2C72628D00C2A4D1 /* SafariWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				8C793D952C6D667E00C2A4D1 /* PrivacyView.swift */,
+				8C793DAC2C72628D00C2A4D1 /* SafariWebView.swift */,
 			);
 			path = PrivacyView;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				8C4C3A092C6D01F3001C6D14 /* Constants.swift in Sources */,
 				8C793D912C6D550F00C2A4D1 /* NotificationView.swift in Sources */,
 				8C793D9E2C6D71C700C2A4D1 /* GameModel.swift in Sources */,
+				8C793DAD2C72628D00C2A4D1 /* SafariWebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

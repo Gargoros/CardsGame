@@ -13,6 +13,7 @@ struct WinView: View {
     let time: String
     let reset: () -> Void
     let menu: () -> Void
+    let size: CGFloat = 55
     
     //MARK: - Views
     var body: some View {
@@ -55,9 +56,11 @@ struct WinView: View {
                     IconButtonView(
                         buttonImage: ImagesConstants.undoLeftButton,
                         action: reset)
+                    .frame(width: size, height: size)
                     IconButtonView(
                         buttonImage: ImagesConstants.menuButton,
                         action: menu)
+                    .frame(width: size, height: size)
                     Spacer()
                 }
             }

@@ -31,6 +31,10 @@ struct MenuView: View {
                                 width: geometry.size.width * 0.65,
                                 height: geometry.size.height * 0.12
                             )
+                            .simultaneousGesture(TapGesture().onEnded {
+                                game.onTapSound()
+                                game.hapticFeedbackOnTap()
+                                        })
                         VStack (spacing: 5){
                             NavigationLink(
                                 value: RouterEnum.privacy) {
@@ -42,6 +46,10 @@ struct MenuView: View {
                                     width: geometry.size.width * 0.45,
                                     height: geometry.size.height * 0.08
                                 )
+                                .simultaneousGesture(TapGesture().onEnded {
+                                    game.onTapSound()
+                                    game.hapticFeedbackOnTap()
+                                            })
                             
                             NavigationLink(
                                 value: RouterEnum.notification) {
@@ -53,17 +61,21 @@ struct MenuView: View {
                                     width: geometry.size.width * 0.45,
                                     height: geometry.size.height * 0.08
                                 )
+                                .simultaneousGesture(TapGesture().onEnded {
+                                    game.onTapSound()
+                                    game.hapticFeedbackOnTap()
+                                            })
                         }
                         .navigationDestination(for: RouterEnum.self) { route in
                             switch route {
                             case .menu:
                                 MenuView()
                             case .game:
-                                GameView(viewModel: game)
+                                GameView(viewModel: game, path: router)
                             case .notification:
                                 NotificationView()
                             case .setting:
-                                SettingView()
+                                SettingView(viewModel: game, path: router)
                             case .privacy:
                                 PrivacyView(linkPage: $url)
                             }

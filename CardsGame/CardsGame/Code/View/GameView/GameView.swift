@@ -10,6 +10,7 @@ import SwiftUI
 struct GameView: View {
     //MARK: - Properties
     @ObservedObject var viewModel: GameViewModel
+    @ObservedObject var path: Router
     
     //MARK: - Views
     var body: some View {
@@ -35,17 +36,22 @@ struct GameView: View {
                 ]
                 
                 VStack (spacing: 10) {
+                    //MARK: - Setting Button
                     IconButtonView(
                         buttonImage: ImagesConstants.settingsButton,
-                        action: {})
-                    .frame(width: geometry.size.width * 0.3,
-                           height: geometry.size.width * 0.3
+                        action: {
+                            viewModel.onTapSound()
+                            viewModel.hapticFeedbackOnTap()
+                            viewModel.isSettings.toggle()
+                        })
+                    .frame(width: geometry.size.width * 0.16,
+                           height: geometry.size.width * 0.16
                     )
                     .position(
                         x: geometry.size.width * 0.08,
                         y: geometry.size.height * 0.08
                     )
-                
+                    
                     
                     GameInfoView(
                         movies: viewModel.movies,
@@ -66,7 +72,12 @@ struct GameView: View {
                             .animation(.default, value: viewModel.slots)
                             .padding(.vertical, 5)
                             .onTapGesture {
+                                if !slot.isFaceUp{
+                                    viewModel.flipOverSound()
+                                    viewModel.hapticFeedbackOnTap()
+                                }
                                 if viewModel.isStopWatchTimerRun {
+                                    
                                     withAnimation(.easeInOut(duration: 0.3)) {
                                         viewModel.chooseSlot(slot)
                                     }
@@ -90,34 +101,43 @@ struct GameView: View {
                     
                     //MARK: - bottoms button
                     HStack(spacing: 15){
+                        //MARK: - Play/Pause button
                         IconButtonView(
                             buttonImage: viewModel.isStopWatchTimerRun ?
                             ImagesConstants.pauseButton : ImagesConstants.playButton,
                             action: {
+                                viewModel.onTapSound()
+                                viewModel.hapticFeedbackOnTap()
                                 viewModel.isStopWatchTimerRun ?
                                 viewModel.pauseWatch() : viewModel.startStopwatch()
                             })
-                        .frame(width: geometry.size.width * 0.3,
-                               height: geometry.size.width * 0.3)
+                        .frame(width: geometry.size.width * 0.16,
+                               height: geometry.size.width * 0.16)
                         
                         Spacer()
+                        //MARK: - Back to Root button
                         IconButtonView(
                             buttonImage: ImagesConstants.leftButton,
                             action: {
-                                Router.shared.backToRoot()
+                                viewModel.onTapSound()
+                                viewModel.hapticFeedbackOnTap()
+                                path.backToRoot()
                             })
-                        .frame(width: geometry.size.width * 0.3,
-                               height: geometry.size.width * 0.3)
+                        .frame(width: geometry.size.width * 0.16,
+                               height: geometry.size.width * 0.16)
                         Spacer()
+                        //MARK: - Reset Game button
                         IconButtonView(
                             buttonImage: ImagesConstants.undoRightButton,
                             action: {
+                                viewModel.onTapSound()
+                                viewModel.hapticFeedbackOnTap()
                                 withAnimation(.easeInOut(duration: 0.5)){
                                     viewModel.recreateGame()
                                 }
                             })
-                        .frame(width: geometry.size.width * 0.3,
-                               height: geometry.size.width * 0.3)
+                        .frame(width: geometry.size.width * 0.16,
+                               height: geometry.size.width * 0.16)
                     }
                     
                     .position(
@@ -125,6 +145,21 @@ struct GameView: View {
                         y: geometry.size.height * 0.07
                     )
                     
+                }
+                .overlay {
+                    if viewModel.isSettings {
+                        
+                        SettingView(
+                            viewModel: viewModel, path: path)
+                        .frame(
+                            width: geometry.size.width * 0.8,
+                            height: geometry.size.height * 0.8
+                        )
+                        .position(
+                            x: geometry.size.width * 0.67,
+                            y: geometry.size.height * 0.83
+                        )
+                    }
                 }
             }
             .padding(20)
@@ -141,11 +176,15 @@ struct GameView: View {
                     movies: viewModel.movies,
                     time: viewModel.formattedElapsedTime(),
                     reset: {
+                        viewModel.onTapSound()
+                        viewModel.hapticFeedbackOnTap()
                         withAnimation(.easeInOut(duration: 0.5)){
                             viewModel.recreateGame()
                         }},
                     menu: {
-                        Router.shared.backToRoot()
+                        viewModel.onTapSound()
+                        viewModel.hapticFeedbackOnTap()
+                        path.backToRoot()
                     }
                 )
                 .ignoresSafeArea()
@@ -160,5 +199,5 @@ struct GameView: View {
 }
 
 #Preview {
-    GameView(viewModel: GameViewModel())
+    GameView(viewModel: GameViewModel(), path: Router.shared)
 }

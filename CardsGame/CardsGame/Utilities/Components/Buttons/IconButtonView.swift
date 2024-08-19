@@ -20,7 +20,6 @@ struct IconButtonView: View {
             Image(buttonImage)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 55, height: 55)
         }
     }
 }

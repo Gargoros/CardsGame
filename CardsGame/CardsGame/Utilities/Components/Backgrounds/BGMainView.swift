@@ -24,7 +24,7 @@ struct BGMainView: View {
                 Image(ImagesConstants.menuIcon)
                     .resizable()
                     .scaleEffect(x: 0.9, y: 0.4)
-                    .offset(y: -100)
+                    .offset(y: -160)
                 
             }
         }

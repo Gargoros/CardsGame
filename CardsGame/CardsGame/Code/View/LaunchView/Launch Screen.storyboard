@@ -11,13 +11,12 @@
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BG_1" translatesAutoresizingMaskIntoConstraints="NO" id="0nV-zJ-laC">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="0nV-zJ-laC">
                                 <rect key="frame" x="-36" y="-51" width="502" height="1004"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1004" id="bgv-re-OyV"/>
@@ -33,11 +32,12 @@
                         </constraints>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="51.627906976744185" y="373.39055793991417"/>
         </scene>
     </scenes>
     <resources>
-        <image name="BG_1" width="2400" height="2400"/>
+        <image name="Splash" width="1080" height="2400"/>
     </resources>
 </document>

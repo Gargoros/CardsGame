@@ -35,7 +35,7 @@ struct ImagesConstants {
     static let frameGroup           = "GroupFrame"
     
     //MARK: - Icons
-    static let fireIcon             = "Fire"
+    static let fireIcon             = "fire"
     static let menuIcon             = "Menu_icon"
     
     //MARK: - Phrases
@@ -57,7 +57,7 @@ struct ImagesConstants {
     static let button1              = "button1"
     static let button2              = "button2"
     static let button3              = "button3"
-    static let groupBGButton        = "groupBGButton"
+    static let groupBGButton        = "GroupBGButton"
     
     
 }
@@ -82,4 +82,16 @@ struct StringConstants {
     //MARK: - Game
     static let moviesString         = "MOVIES: "
     static let timeString           = "Time: "
+    
+    //MARK: - Settings
+    static let resume               = "RESUME"
+    static let mainMenu             = "MAIN MENU"
+    
+    //MARK: - Sounds
+    static let buttonSound          = "button"
+    static let scrapeSound          = "Scrape"
+    
+    //MARK: - URL
+    static let url1                 = "https://developer.apple.com"
+    static let url2                 = "https://developer.apple.com/documentation/safariservices/sfsafariviewcontroller"
 }

@@ -6,20 +6,28 @@
 //
 
 import Foundation
+import AVFoundation
+import UIKit
 
 class GameViewModel: ObservableObject {
     typealias Slot = GameModel<String>.Slot
     
     private var stopwatchTimer: Timer?
+    private var audioPlayer: AVAudioPlayer?
     var slots: Array<Slot> {
         return model.slots
     }
     var movies: Int {
         return model.movies
     }
+    
+    @Published var isSettings = false
+    @Published var isMute = true
+    @Published var isVibro = true
     @Published var elapsedTime: TimeInterval = 0
     @Published var isStopWatchTimerRun = false
     @Published private var model = createMatchingGame()
+    
     
     private static let slotsList = [
         ImagesConstants.slot1,
@@ -104,5 +112,45 @@ class GameViewModel: ObservableObject {
     
     func winCheck() -> Bool{
         return model.checkAllSlotsMatching()
+    }
+    
+    func setMute(){
+        isMute.toggle()
+    }
+    
+    func setVibro(){
+        isVibro.toggle()
+    }
+    
+    private func playSound(name: String, ext: String = "wav") {
+        guard let soundURL = Bundle.main.url(forResource: name, withExtension: ext) else { return }
+        
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+            audioPlayer?.prepareToPlay()
+            audioPlayer?.volume = 1
+            audioPlayer?.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func onTapSound() {
+        if isMute {
+            playSound(name: StringConstants.buttonSound)
+        }
+    }
+    
+    func flipOverSound(){
+        if isMute {
+            playSound(name: StringConstants.scrapeSound)
+        }
+    }
+    
+    func hapticFeedbackOnTap(style: UIImpactFeedbackGenerator.FeedbackStyle = .medium){
+        if isVibro {
+            let impact = UIImpactFeedbackGenerator(style: style)
+                  impact.impactOccurred()
+        }
     }
 }

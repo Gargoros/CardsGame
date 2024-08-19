@@ -41,6 +41,8 @@
 		8C793DA72C722D2C00C2A4D1 /* WinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C793DA62C722D2C00C2A4D1 /* WinView.swift */; };
 		8C793DAD2C72628D00C2A4D1 /* SafariWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C793DAC2C72628D00C2A4D1 /* SafariWebView.swift */; };
 		8C793DB12C726F9C00C2A4D1 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C793DB02C726F9C00C2A4D1 /* View+Extension.swift */; };
+		8C793DB52C72915200C2A4D1 /* button.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8C793DB22C72915100C2A4D1 /* button.wav */; };
+		8C793DB62C72915200C2A4D1 /* Scrape.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8C793DB32C72915200C2A4D1 /* Scrape.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		8C793DA62C722D2C00C2A4D1 /* WinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinView.swift; sourceTree = "<group>"; };
 		8C793DAC2C72628D00C2A4D1 /* SafariWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebView.swift; sourceTree = "<group>"; };
 		8C793DB02C726F9C00C2A4D1 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		8C793DB22C72915100C2A4D1 /* button.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = button.wav; sourceTree = "<group>"; };
+		8C793DB32C72915200C2A4D1 /* Scrape.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Scrape.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +218,8 @@
 		8C4C39FC2C6CFCF5001C6D14 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				8C793DB22C72915100C2A4D1 /* button.wav */,
+				8C793DB32C72915200C2A4D1 /* Scrape.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -421,6 +427,8 @@
 				8C4C39EE2C6CFB51001C6D14 /* Preview Assets.xcassets in Resources */,
 				8C4C3A012C6CFE29001C6D14 /* InterVariable.ttf in Resources */,
 				8C4C3A002C6CFE29001C6D14 /* MultiroundPro.otf in Resources */,
+				8C793DB62C72915200C2A4D1 /* Scrape.wav in Resources */,
+				8C793DB52C72915200C2A4D1 /* button.wav in Resources */,
 				8C4C39EB2C6CFB51001C6D14 /* Assets.xcassets in Resources */,
 				8C4C3A022C6CFE29001C6D14 /* Muller-Trial-Regular.ttf in Resources */,
 			);

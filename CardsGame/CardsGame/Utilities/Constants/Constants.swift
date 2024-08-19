@@ -35,7 +35,7 @@ struct ImagesConstants {
     static let frameGroup           = "GroupFrame"
     
     //MARK: - Icons
-    static let fireIcon             = "Fire"
+    static let fireIcon             = "fire"
     static let menuIcon             = "Menu_icon"
     
     //MARK: - Phrases
